@@ -1,0 +1,134 @@
+{
+    "grupas": [
+        {
+            "nosaukums": "2.5L"
+        },
+        {
+            "nosaukums": "1.5L"
+        },
+        {
+            "nosaukums": "0.5L"
+        },
+        {
+            "nosaukums": "Bottles"
+        }
+    ],
+    "produkti": [
+        {
+            "nosaukums": "Apple lemonade 2.5L",
+            "grupa": "2.5L",
+            "kods": 81726,
+            "cena": 0.28087667970284597,
+            "izejvielas": [
+                {
+                    "kods": 117,
+                    "nosaukums": "Cukurs",
+                    "mervieniba": "kg",
+                    "cena": 0.7,
+                    "daudzums": "0.050000",
+                    "kopuma": 0.034999999999999996
+                }
+            ],
+            "fiksētie": {
+                "vien_summa": 0.008107809774015767,
+                "vien_daudzums": 1,
+                "summa": 0.008107809774015767
+            },
+            "udens_sagatavosana": [],
+            "iepakojums": {
+                "daudzums": 6,
+                "elementi": [
+                    {
+                        "kods": 981,
+                        "nosaukums": "Termopleve 380*0.050  venta",
+                        "mervieniba": "kg",
+                        "cena": 2.25,
+                        "norma": 0.025,
+                        "summa_iepak": 0.05625,
+                        "summa_vien": 0.009375
+                    },
+                    {
+                        "kods": 4723463,
+                        "nosaukums": "Stretčplēve",
+                        "mervieniba": "kg",
+                        "cena": 3.33,
+                        "norma": 0.0052,
+                        "summa_iepak": 0.017315999999999998,
+                        "summa_vien": 0.0028859999999999997
+                    }
+                ]
+            },
+            "ražošanas_grupas": [
+                {
+                    "nosaukums": "Production line",
+                    "daudzums": 100,
+                    "darbinieki": [
+                        {
+                            "nosaukums": "Worker1",
+                            "alga": 6,
+                            "alga_nodoklis": 4.225,
+                            "norma": 1,
+                            "summa": 4.225,
+                            "summa_vien": 0.042249999999999996
+                        }
+                    ]
+                }
+            ],
+            "elektriba": {
+                "vien_summa": 0.01245,
+                "vien_daudzums": 1,
+                "summa": 0.01245
+            },
+            "deposit": 0.0009
+        }
+    ],
+    "izejvielas": [
+        {
+            "kods": 117,
+            "nosaukums": "Cukurs",
+            "mervieniba": "kg",
+            "cena": 0.7
+        }
+    ],
+    "iepakojums": [
+        {
+            "kods": 43,
+            "nosaukums": "Termopleve",
+            "mervieniba": "kg",
+            "cena": 1
+        }
+    ],
+    "darbinieki": [
+        {
+            "nosaukums": "Worker1",
+            "alga": 6,
+            "alga_procents": 0.975,
+            "alga_nodoklis": 4.225,
+            "summa": 1.01
+        }
+    ],
+    "darbinieku_nodoklis": "20",
+    "alcohol_tax": 4.1,
+    "elektriba": {
+        "cena": 1.3,
+        "izlietota": 57.46153846153845,
+        "vien_daudzums": 6000,
+        "summa": 74.69999999999999,
+        "vien_summa": 0.01245
+    },
+    "fiksētie": {
+        "vien_daudzums": 1125167,
+        "summa": 9122.64,
+        "vien_summa": 0.008107809774015767,
+        "elementi": [
+            {
+                "nosaukums": "Вывоз мусора",
+                "value": 136.64
+            },
+            {
+                "nosaukums": "Охрана",
+                "value": 480
+            }
+        ]
+    }
+}

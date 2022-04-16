@@ -1,0 +1,20 @@
+.addEntryButtons {
+  margin: 0;
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.alert-fixed {
+  position:fixed;
+  width: 100%;
+}
+
+.navbar-brand {
+  cursor: pointer
+}
+
+.product-cell{
+  cursor: pointer
+}
+
