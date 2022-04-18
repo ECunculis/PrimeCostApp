@@ -15,12 +15,12 @@ const { ipcRenderer } = window.require("electron");
 const lodash = require("lodash");
 
 function WorkersAllPage() {
-  let headerNames = ["Nosaukums", "Alga", "% Daļa", "Summa", "Убрать"];
+  let headerNames = ["Name", "Salary", "% Fraction", "Sum", "Remove"];
 
   return (
     <>
       <NavBar />
-      <h3 className="text-center">Список рабочих</h3>
+      <h3 className="text-center">Workers list</h3>
       <Nodoklis />
       <GeneralizedTable headerNames={headerNames} tableBody={<TableBody />} />
       <AddNewItemButton message={"workers:ask-for-window"} />
@@ -85,28 +85,6 @@ function Nodoklis(props) {
             }
           });
         });
-        // Update the alga for each darbinieks everywhere
-        groupObjects.forEach((group) => {
-          // Get object
-          let razGrupas = lodash.chain(group).get("ražošanas_grupas").value();
-
-          razGrupas.forEach((razGroup) => {
-            let daudzums = razGroup["daudzums"];
-            let darbinieks = lodash
-              .chain(razGroup)
-              .get("darbinieki")
-              .find({ nosaukums: item.nosaukums })
-              .value();
-
-            // If object exists
-            if (darbinieks !== undefined) {
-              // Update the workers data in the product or group
-              darbinieks["alga_nodoklis"] = item["alga_nodoklis"];
-              darbinieks["summa"] = item["alga_nodoklis"] * darbinieks["norma"];
-              darbinieks["summa_vien"] = darbinieks["summa"] / daudzums;
-            }
-          });
-        });
       });
 
       ipcRenderer.sendSync("modify-data", [JSON.stringify(data)]);
@@ -117,7 +95,7 @@ function Nodoklis(props) {
     <>
       <Form noValidate validated={nodoklisValidated}>
         <Form.Group>
-          <Form.Label>Налог на зарплату(%)</Form.Label>
+          <Form.Label>Salary tax(%)</Form.Label>
           <Form.Control
             id="daudzums"
             type="number"
@@ -236,34 +214,6 @@ function Alga(props) {
           }
         });
       });
-
-      groupObjects.forEach((group) => {
-        // Get object
-        let razGrupas = lodash.chain(group).get("ražošanas_grupas").value();
-
-        razGrupas.forEach((razGroup) => {
-          let daudzums = razGroup["daudzums"];
-
-          let darbinieks = lodash
-            .chain(razGroup)
-            .get("darbinieki")
-            .find({ nosaukums: props.item.nosaukums })
-            .value();
-
-          // If object exists
-          if (darbinieks !== undefined) {
-            let summa = alga * darbinieks["norma"];
-            let summa_vien = summa / daudzums;
-
-            lodash
-              .chain(darbinieks)
-              .assign({ alga: parseFloat(alga) })
-              .assign({ summa: parseFloat(summa) })
-              .assign({ summa_vien: parseFloat(summa_vien) })
-              .value();
-          }
-        });
-      });
       // Update data
       ipcRenderer.sendSync("modify-data", [JSON.stringify(data)]);
     }
@@ -287,26 +237,6 @@ function Alga(props) {
   );
 }
 
-// function NavigationBar() {
-
-// 	let history = useHistory();
-
-// 	function handleClickMainPage() {
-// 		history.push("/");
-// 	}
-//   return (
-// 	<>
-// 		<Navbar bg="dark" variant="dark">
-// 			<Container>
-// 			<Navbar.Brand onClick={handleClickMainPage}>На главную</Navbar.Brand>
-// 				<Nav className="me-auto">
-// 				</Nav>
-// 			</Container>
-// 		</Navbar>
-// 	</>
-//   )
-// }
-
 function DeleteButton(props) {
   function handleClick() {
     let data = JSON.parse(ipcRenderer.sendSync("get-data"));
@@ -323,7 +253,7 @@ function DeleteButton(props) {
   }
   return (
     <Button variant="danger" size="sm" onClick={handleClick}>
-      удалить
+      remove
     </Button>
   );
 }

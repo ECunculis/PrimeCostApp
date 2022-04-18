@@ -11,6 +11,7 @@ import Col from "react-bootstrap/Col";
 
 import globalSettings from "../globalSettings";
 import GeneralizedTable from "../GeneralizedTable";
+import AddNewItemDropdown from "../AddNewItemDropdown";
 
 const { ipcRenderer } = window.require("electron");
 const lodash = require("lodash");
@@ -95,7 +96,11 @@ function PackageBlock(props) {
         headerNames={headerNames}
         tableBody={<PackageTableBody vienDaudzums={vienDaudzums} {...props} />}
       />
-      <AddNewItemDropdown nosaukums={props.nosaukums} type={props.type} />
+      <AddNewItemDropdown
+        nosaukums={props.nosaukums}
+        type={props.type}
+        from={"iepakojums"}
+      />
     </>
   );
 }
@@ -363,67 +368,9 @@ function DeletePackageEntryButton(props) {
       size="sm"
       onClick={(e) => handleClick(props.fileName, e)}
     >
-      удалить
+      remove
     </Button>
   );
-}
-
-function AddNewItemDropdown(props) {
-  function handleGeneral(event, type) {
-    ipcRenderer.send("expenses-add-window", [
-      props.nosaukums,
-      JSON.stringify(type),
-    ]);
-  }
-
-  let dropDownButton = "";
-  if (props.type === "produkti") {
-    dropDownButton = (
-      <Dropdown>
-        <Dropdown.Toggle variant="secondary" id="dropdown-basic" size="sm">
-          Добавить из
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          <Dropdown.Item
-            onClick={(e) =>
-              handleGeneral(e, {
-                to: "produkti",
-                from: "iepakojums",
-                type: "all",
-              })
-            }
-          >
-            Общий список
-          </Dropdown.Item>
-          <Dropdown.Item
-            onClick={(e) =>
-              handleGeneral(e, {
-                to: "produkti",
-                from: "iepakojums",
-                type: "group",
-              })
-            }
-          >
-            Список группы
-          </Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-    );
-  } else if (props.type === "grupas") {
-    dropDownButton = (
-      <Button
-        variant="secondary"
-        size="sm"
-        onClick={(e) =>
-          handleGeneral(e, { to: "grupas", from: "iepakojums", type: "all" })
-        }
-      >
-        Добавить
-      </Button>
-    );
-  }
-
-  return <div className="addEntryButtons">{dropDownButton}</div>;
 }
 
 export default PackageBlock;

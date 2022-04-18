@@ -323,7 +323,7 @@ function DeleteWorkersEntryButton(props) {
       size="sm"
       onClick={(e) => handleClick(props.fileName, e)}
     >
-      удалить
+      remove
     </Button>
   );
 }
@@ -350,7 +350,7 @@ function DeleteRazGrupasButton(props) {
       size="sm"
       onClick={(e) => handleClick(props.fileName, e)}
     >
-      Удалить группу
+      Remove group
     </Button>
   );
 }
@@ -372,37 +372,17 @@ function AddNewRazGrupaDropdown(props) {
   let dropDownButton = "";
   if (props.type === "produkti") {
     dropDownButton = (
-      <Dropdown>
-        <Dropdown.Toggle variant="secondary" id="dropdown-basic" size="sm">
-          Добавить группу производства из
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          <Dropdown.Item onClick={(e) => handleGeneral(e)}>
-            Список группы
-          </Dropdown.Item>
-          <Dropdown.Item
-            onClick={(e) =>
-              handleCreateNew(e, {
-                productName: props.productName,
-                type: "produkti",
-              })
-            }
-          >
-            Создать Новый
-          </Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-    );
-  } else if (props.type === "grupas") {
-    dropDownButton = (
       <Button
         variant="secondary"
         size="sm"
         onClick={(e) =>
-          handleCreateNew(e, { productName: props.productName, type: "grupas" })
+          handleCreateNew(e, {
+            productName: props.productName,
+            type: "produkti",
+          })
         }
       >
-        Добавить группу производства
+        Add manufacturing group
       </Button>
     );
   }
@@ -433,7 +413,7 @@ function AddNewItemDropdown(props) {
           })
         }
       >
-        Добавить работника
+        Add new worker
       </Button>
     );
   } else if (props.type === "grupas") {
@@ -450,7 +430,7 @@ function AddNewItemDropdown(props) {
           })
         }
       >
-        Добавить работника
+        Add new worker
       </Button>
     );
   }

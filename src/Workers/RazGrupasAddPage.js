@@ -79,12 +79,6 @@ function InputAlert(props) {
   return null;
 }
 
-// function isNumeric(str) {
-//     if (typeof str != "string") return false // we only process strings!
-//     return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
-//            !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
-// }
-
 class InputForm extends React.Component {
   constructor(props) {
     super(props);
@@ -93,23 +87,6 @@ class InputForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
-    // let sourceFileName
-
-    // if (this.props.type === "product") {
-    //     sourceFileName = "/.." + globalSettings["productsFileName"]
-    // } else if (this.props.type === "group") {
-    //     sourceFileName = "/.." + globalSettings["groupsFileName"]
-    // }
-
-    // let productObj = {key:"nosaukums", value:this.props.productName}
-    // Check the input correctness
-    // this.data = ipcRenderer.sendSync('get', [
-    //     [JSON.stringify(productObj), "ražošanas_grupas"],
-    //     [0,1],
-    //     sourceFileName
-    // ]);
-    // this.data = JSON.parse(this.data)
 
     this.data = JSON.parse(ipcRenderer.sendSync("get-data"));
     this.data = lodash
@@ -122,7 +99,7 @@ class InputForm extends React.Component {
     // Check if empty
     if (this.props.nosaukums === "") {
       this.props.setShowAlert(true);
-      this.props.setAlertMessage("Введите данные");
+      this.props.setAlertMessage("Enter the data");
     } else {
       // Check if element already exists
       let element = this.data.find(
@@ -131,7 +108,7 @@ class InputForm extends React.Component {
       if (typeof element != "undefined") {
         this.props.setShowAlert(true);
         this.props.setAlertMessage(
-          `Группа производства с названием "${this.props.nosaukums}" уже существует`
+          `Manufacturing group "${this.props.nosaukums}" already exists`
         );
         // Check if price is written correctly
       } else {
@@ -140,14 +117,6 @@ class InputForm extends React.Component {
           daudzums: 1,
           darbinieki: [],
         };
-
-        // ipcRenderer.sendSync('modify',  [
-        //     "add",
-        //     [JSON.stringify(productObj), "ražošanas_grupas"],
-        //     [0,1],
-        //     sourceFileName,
-        //     JSON.stringify(paramObj)
-        // ]);
 
         let tempData = JSON.parse(ipcRenderer.sendSync("get-data"));
 
@@ -167,15 +136,15 @@ class InputForm extends React.Component {
     return (
       <Form>
         <Form.Group className="mb-3" controlId="formGroupName">
-          <Form.Label>Название</Form.Label>
+          <Form.Label>Title</Form.Label>
           <Form.Control
-            placeholder="Название"
+            placeholder="e.g. main production line"
             value={this.props.nosaukums}
             onChange={this.props.handleNameChange}
           />
         </Form.Group>
         <Button variant="primary" type="submit" onClick={this.handleSubmit}>
-          Подтвердить
+          Submit
         </Button>
       </Form>
     );

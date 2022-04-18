@@ -30,23 +30,14 @@
                 }
             ],
             "fiksētie": {
-                "vien_summa": 0.008107809774015767,
+                "vien_summa": 0.0011767142122013888,
                 "vien_daudzums": 1,
-                "summa": 0.008107809774015767
+                "summa": 0.0011767142122013888
             },
             "udens_sagatavosana": [],
             "iepakojums": {
                 "daudzums": 6,
                 "elementi": [
-                    {
-                        "kods": 981,
-                        "nosaukums": "Termopleve 380*0.050  venta",
-                        "mervieniba": "kg",
-                        "cena": 2.25,
-                        "norma": 0.025,
-                        "summa_iepak": 0.05625,
-                        "summa_vien": 0.009375
-                    },
                     {
                         "kods": 4723463,
                         "nosaukums": "Stretčplēve",
@@ -55,6 +46,15 @@
                         "norma": 0.0052,
                         "summa_iepak": 0.017315999999999998,
                         "summa_vien": 0.0028859999999999997
+                    },
+                    {
+                        "kods": 43,
+                        "nosaukums": "Termopleve",
+                        "mervieniba": "kg",
+                        "cena": 1,
+                        "norma": 1,
+                        "summa_iepak": 1,
+                        "summa_vien": 1
                     }
                 ]
             },
@@ -66,10 +66,10 @@
                         {
                             "nosaukums": "Worker1",
                             "alga": 6,
-                            "alga_nodoklis": 4.225,
+                            "alga_nodoklis": 7.2,
                             "norma": 1,
-                            "summa": 4.225,
-                            "summa_vien": 0.042249999999999996
+                            "summa": 7.2,
+                            "summa_vien": 0.07200000000000001
                         }
                     ]
                 }
@@ -102,8 +102,8 @@
         {
             "nosaukums": "Worker1",
             "alga": 6,
-            "alga_procents": 0.975,
-            "alga_nodoklis": 4.225,
+            "alga_procents": 1.2,
+            "alga_nodoklis": 7.2,
             "summa": 1.01
         }
     ],
@@ -118,16 +118,16 @@
     },
     "fiksētie": {
         "vien_daudzums": 1125167,
-        "summa": 9122.64,
-        "vien_summa": 0.008107809774015767,
+        "summa": 1324,
+        "vien_summa": 0.0011767142122013888,
         "elementi": [
             {
-                "nosaukums": "Вывоз мусора",
-                "value": 136.64
+                "nosaukums": "Garbage collection",
+                "value": 324
             },
             {
-                "nosaukums": "Охрана",
-                "value": 480
+                "nosaukums": "Security",
+                "value": 1000
             }
         ]
     }
