@@ -32,25 +32,22 @@ function AddExpensesPage() {
 
   switch (info["from"]) {
     case "izejvielas":
-      headerNames = ["Kods", "Nosaukums", "Mērvienība", "Cena", "Добавить"];
+      headerNames = ["Code", "Name", "Measure", "Price", "Add"];
       break;
     case "fiksētie":
-      headerNames = ["Nosaukums", "Cena", "Добавить"];
-      break;
-    case "udens_sagatavosana":
-      headerNames = ["Nosaukums", "Cena", "Добавить"];
+      headerNames = ["Name", "Price", "Add"];
       break;
     case "iepakojums":
-      headerNames = ["Kods", "Nosaukums", "Mērvienība", "Cena", "Добавить"];
+      headerNames = ["Code", "Name", "Measure", "Price", "Add"];
       break;
     case "darbinieki":
-      headerNames = ["Nosaukums", "Alga", "Alga ar nodokļi", "Добавить"];
+      headerNames = ["Title", "Hourly rate", "Hourly rate with tax", "Add"];
       break;
     case "ražošanas_grupas":
-      headerNames = ["Nosaukums", "Добавить"];
+      headerNames = ["Name", "Add"];
       break;
     default:
-      headerNames = ["Nosaukums", "Добавить"];
+      headerNames = ["Name", "Add"];
   }
 
   if (info["type"] === "all") {
@@ -190,7 +187,7 @@ function IzejvielaTable(props) {
   const columns = [
     {
       dataField: "kods",
-      text: "Kods",
+      text: "Code",
       editable: false,
       sort: true,
       headerAlign: "center",
@@ -198,21 +195,21 @@ function IzejvielaTable(props) {
     },
     {
       dataField: "nosaukums",
-      text: "Nosaukums",
+      text: "Name",
       sort: true,
       headerAlign: "center",
       editable: false,
     },
     {
       dataField: "mervieniba",
-      text: "Mērvieniba",
+      text: "Measure",
       headerAlign: "center",
       headerStyle: { width: "12%" },
       editable: false,
     },
     {
       dataField: "cena",
-      text: "Cena",
+      text: "Price",
       sort: true,
       headerAlign: "center",
       headerStyle: { width: "200px" },
@@ -220,7 +217,7 @@ function IzejvielaTable(props) {
     },
     {
       dataField: "",
-      text: "Убрать",
+      text: "Remove",
       headerAlign: "center",
       headerStyle: { width: "80px" },
       editable: false,
@@ -240,7 +237,7 @@ function IzejvielaTable(props) {
     >
       {(props) => (
         <div>
-          <h5>Поиск по названию:</h5>
+          <h5>search:</h5>
           <SearchBar
             {...props.searchProps}
             className="custom-search-field"
@@ -265,22 +262,19 @@ function TableTitle() {
   let title;
   switch (info["from"]) {
     case "izejvielas":
-      title = "Сырьё";
+      title = "Raw materials";
       break;
     case "fiksētie":
-      title = "Фиксированные";
-      break;
-    case "udens_sagatavosana":
-      title = "Водоподготовка";
+      title = "Fixed costs";
       break;
     case "iepakojums":
-      title = "Упаковка";
+      title = "Package";
       break;
     case "darbinieki":
-      title = "Работники";
+      title = "Workers";
       break;
     case "ražošanas_grupas":
-      title = "Группы производств";
+      title = "Manufacturing groups";
       break;
     default:
       throw new Error('Unknown "from" entry');
@@ -510,25 +504,27 @@ function AddExpenseButton(props) {
       let message = "";
       switch (info["from"]) {
         case "izejvielas":
-          message = 'Сырье "' + props.row.nosaukums + '" уже в списке';
+          message =
+            'Raw material "' + props.row.nosaukums + '" already in the list';
           break;
         case "fiksētie":
           message =
-            'Фиксированная затрата "' + props.item.nosaukums + '" уже в списке';
-          break;
-        case "udens_sagatavosana":
-          message =
-            'Водоподготовка "' + props.item.nosaukums + '" уже в списке';
+            'Fixed cost "' + props.item.nosaukums + '" already in the list';
           break;
         case "iepakojums":
-          message = 'Упаковка "' + props.item.nosaukums + '" уже в списке';
+          message =
+            'Package element "' +
+            props.item.nosaukums +
+            '" already in the list';
           break;
         case "darbinieki":
-          message = 'Работник "' + props.item.nosaukums + '" уже в списке';
+          message = 'Worker "' + props.item.nosaukums + '" already in the list';
           break;
         case "ražošanas_grupas":
           message =
-            'Группа производства "' + props.item.nosaukums + '" уже в списке';
+            'Manufacturing group "' +
+            props.item.nosaukums +
+            '" already in the list';
           break;
         default:
           throw new Error('Unknown "from" entry');
@@ -540,7 +536,7 @@ function AddExpenseButton(props) {
 
   return (
     <Button variant="success" type="button" size="sm" onClick={handleClick}>
-      Добавить
+      Add
     </Button>
   );
 }
