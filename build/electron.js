@@ -139,7 +139,7 @@ ipcMain.on("expenses-add-window", (event, arg) => {
     baseDir: __dirname,
     reactRouterPath:
       "/expenses-add-window/" + encodeURIComponent(productName) + "/" + type,
-    windowTitle: "Add expence",
+    windowTitle: "Добавить сырье",
     windowWidth: 800,
     windowHeight: 400,
     devTools: false,
@@ -158,7 +158,7 @@ ipcMain.on("product-fixed-cost:add-general-window", (event, arg) => {
       encodeURIComponent(productName) +
       "/" +
       type,
-    windowTitle: "Add fixed cost",
+    windowTitle: "Добавить сырье",
     windowWidth: 400,
     windowHeight: 400,
     devTools: false,
@@ -187,7 +187,7 @@ ipcMain.on("raw-material:ask-for-window", (event, arg) => {
   createReactAppWindow(windows, {
     baseDir: __dirname,
     reactRouterPath: "/raw-material-add",
-    windowTitle: "Add raw material",
+    windowTitle: "Добавить сырье",
     windowWidth: 400,
     windowHeight: 500,
     devTools: false,
@@ -199,7 +199,7 @@ ipcMain.on("package:ask-for-window", (event, arg) => {
   createReactAppWindow(windows, {
     baseDir: __dirname,
     reactRouterPath: "/package-add",
-    windowTitle: "Add package element",
+    windowTitle: "Добавить сырье",
     windowWidth: 400,
     windowHeight: 400,
     devTools: false,
@@ -211,7 +211,7 @@ ipcMain.on("fixed-cost:ask-for-window", (event, arg) => {
   createReactAppWindow(windows, {
     baseDir: __dirname,
     reactRouterPath: "/fixed-cost-all-add",
-    windowTitle: "Add fixed cost",
+    windowTitle: "Добавить фиксированные затраты",
     windowWidth: 400,
     windowHeight: 400,
     devTools: false,
@@ -223,7 +223,7 @@ ipcMain.on("workers:ask-for-window", (event, arg) => {
   createReactAppWindow(windows, {
     baseDir: __dirname,
     reactRouterPath: "/workers-add",
-    windowTitle: "Add workers",
+    windowTitle: "Добавить рабочих",
     windowWidth: 400,
     windowHeight: 400,
     devTools: false,
@@ -239,7 +239,7 @@ ipcMain.on("razGrupas:ask-for-window", (event, arg) => {
     baseDir: __dirname,
     reactRouterPath:
       "/raz-grupas-add/" + encodeURIComponent(productName) + "/" + type,
-    windowTitle: "Add production group",
+    windowTitle: "Добавить группу производства",
     windowWidth: 400,
     windowHeight: 400,
     devTools: false,
