@@ -1,8 +1,12 @@
+
+<div align="center">
+  <img src="/public/icon.ico" alt="Logo" title="Logo">
+</div>
 <h1 align="center">Prime Cost App</h1>
 
-
-# Table of Contents
+## Table of Contents
 1. [Project description](#project-description)
+2. [How to run](#how-to-run)
 
 
 ## Project description
@@ -15,4 +19,10 @@ This project was initialy developed for the Vincere company to solve their issue
 * Salary of the workers which are directly related to product creation.
 * Fixed costs such as security, working zone cleaning, administration, electricity.
 * Deposit, which have to be paid for the bottles.
+
+## Project description
+## How to run
+
+npm install
+npm run dev
 
