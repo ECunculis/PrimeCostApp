@@ -32,9 +32,23 @@ Navbar has the dropdown list of different general lists such as raw materials, p
 
 ![Animation2](https://user-images.githubusercontent.com/31374191/164440295-0b98c3e6-1ec6-45ca-bc3d-4bfdbf28ceff.gif)
 
+![Animation3](https://user-images.githubusercontent.com/31374191/164442217-27dab78d-dd6c-4f11-baef-a3d248222446.gif)
+
+
 
 ## How to run
 
+1. Download and install the node.js: https://nodejs.org/en/download/  
+Verify the installation:
+```
+node -v
+```
+2. Install required modules and run the app using the following commands in the project folder: 
+```
 npm install
 npm run dev
-
+```
+3. To build the project use the following command:
+```
+npm run electron:build
+```
