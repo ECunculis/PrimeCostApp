@@ -23,7 +23,7 @@ function IzejvielasBlock(props) {
     "Measure",
     "Price",
     "Amount",
-    "Sum/package",
+    "Price/unit",
     "Remove",
   ];
 

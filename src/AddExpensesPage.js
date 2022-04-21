@@ -241,7 +241,7 @@ function IzejvielaTable(props) {
           <SearchBar
             {...props.searchProps}
             className="custom-search-field"
-            placeholder="Найти"
+            placeholder="e.g. Apple flavour"
             srText=""
           />
           <hr />

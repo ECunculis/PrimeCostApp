@@ -642,9 +642,9 @@
             "deposit": 0.0009
         },
         {
-            "nosaukums": "Bottle 1.5L",
+            "nosaukums": "Bottle 0.5L",
             "grupa": "Bottles",
-            "kods": 16,
+            "kods": 845,
             "cena": 0.4053267142122014,
             "izejvielas": [
                 {
@@ -815,82 +815,6 @@
                 "summa": 0.012449999999999998
             },
             "deposit": 0.0009
-        },
-        {
-            "nosaukums": "Bottle 1.5L",
-            "grupa": "Bottles",
-            "kods": 16,
-            "cena": 0.4053267142122014,
-            "izejvielas": [
-                {
-                    "kods": 2,
-                    "nosaukums": "PET 1.5L",
-                    "mervieniba": "gab",
-                    "cena": 0.23,
-                    "daudzums": 1,
-                    "kopuma": 0.23
-                }
-            ],
-            "fiksētie": {
-                "vien_summa": 0.0011767142122013888,
-                "vien_daudzums": 1,
-                "summa": 0.0011767142122013888
-            },
-            "udens_sagatavosana": [],
-            "iepakojums": {
-                "daudzums": 100,
-                "elementi": [
-                    {
-                        "kods": 5,
-                        "nosaukums": "Pad",
-                        "mervieniba": "kg",
-                        "cena": 1.4,
-                        "norma": 0.05,
-                        "summa_iepak": 0.06999999999999999,
-                        "summa_vien": 0.0006999999999999999
-                    },
-                    {
-                        "kods": 4,
-                        "nosaukums": "Thermo film",
-                        "mervieniba": "kg",
-                        "cena": 25.3,
-                        "norma": 0.2,
-                        "summa_iepak": 5.0600000000000005,
-                        "summa_vien": 0.050600000000000006
-                    }
-                ]
-            },
-            "ražošanas_grupas": [
-                {
-                    "nosaukums": "Bottle Blowing",
-                    "daudzums": 1000,
-                    "darbinieki": [
-                        {
-                            "nosaukums": "Bottle Maker",
-                            "alga": 10,
-                            "alga_nodoklis": 12,
-                            "norma": 8,
-                            "summa": 96,
-                            "summa_vien": 0.096
-                        },
-                        {
-                            "nosaukums": "Operator",
-                            "alga": 12,
-                            "alga_nodoklis": 14.4,
-                            "norma": 1,
-                            "summa": 14.4,
-                            "summa_vien": 0.0144
-                        }
-                    ]
-                }
-            ],
-            "elektriba": {
-                "vien_summa": 0.012449999999999998,
-                "vien_daudzums": 1,
-                "summa": 0.012449999999999998
-            },
-            "deposit": 0,
-            "cena(bez iepak.)": "0.354027"
         }
     ],
     "izejvielas": [
