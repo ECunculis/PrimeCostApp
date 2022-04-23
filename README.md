@@ -36,7 +36,7 @@ Navbar has the dropdown list of different general lists such as raw materials, p
 
 
 
-## How to run
+## How to run (for development)
 
 1. Download and install the node.js: https://nodejs.org/en/download/  
 Verify the installation:
