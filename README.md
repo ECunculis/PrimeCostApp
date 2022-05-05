@@ -20,7 +20,7 @@
 This is cross-platform desktop application written in JavaScript, HTML, CSS, using Electron, React and Bootstrap.
 
 This project was initialy developed for the drink manufacturing company to solve their issue of having to manually calculate the direct and indirect cost of producing one unit of product. Such costs are: 
-* Raw materials. These are materials which are directly related to product creation. For instance, to create such product as lemonade, water, sugar, flavour, organic acid and so on will be necessary.
+* Raw materials. These are materials which are directly related to product creation, for instance, water, flavouring, sugar, lemon acid are the main components of the lemonade.
 * Packaging costs, which are costs related to product packaging, for instance, the plastic film which wraps the product in the groups of 6 bottles.
 * Salary of the workers which are directly related to product creation.
 * Fixed costs such as security, working zone cleaning, administration, electricity.
@@ -40,7 +40,7 @@ Navbar has the dropdown list of different general lists such as raw materials, p
 
 ### General list items
 
-If price of one item in the general list is modified, this change is propagated to all products which includes the modified item. Thus, it makes the price management of products much easier, because there is no need in manually re-calculating the new price, when the price of raw materials, electricity, package are changed.
+If price of one item in the general list is modified, this change is propagated to all products which includes the modified item. Thus, it makes the price management of products much easier, because there is no need in manually re-calculating the new price for a considerate number of products, when the price of raw materials, electricity, package are changed.
 
 ![Animation3](https://user-images.githubusercontent.com/31374191/164442217-27dab78d-dd6c-4f11-baef-a3d248222446.gif)
 
